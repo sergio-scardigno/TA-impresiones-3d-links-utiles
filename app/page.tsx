@@ -174,11 +174,11 @@ const data: Data = {
             title: 'Youtube',
             image: '/img/youtube.png',
         },
-        // {
-        //     href: 'https://taimpresiones3d.com.ar/',
-        //     title: 'Tienda',
-        //     image: '/img/store.png',
-        // },
+        {
+            href: 'https://taimpresiones3d.vercel.app/muestrario',
+            title: 'Muestrario',
+            image: '/img/store.png',
+        },
     ],
     socials: [
         {

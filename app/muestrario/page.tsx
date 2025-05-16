@@ -86,7 +86,7 @@ Precio: $${producto.precio.toLocaleString()}
                         key={producto.id}
                         className="bg-white rounded-lg shadow-lg overflow-hidden"
                     >
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-48">
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-62">
                             <Image
                                 src={producto.imagen}
                                 alt={producto.nombre}
@@ -110,7 +110,7 @@ Precio: $${producto.precio.toLocaleString()}
                                 onClick={() => handleWhatsApp(producto)}
                                 className="w-full bg-green-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-green-600 transition-colors"
                             >
-                                <FaWhatsapp className="text-xl" />
+                                <FaWhatsapp size={24} />
                                 Contactar por WhatsApp
                             </button>
                         </div>
