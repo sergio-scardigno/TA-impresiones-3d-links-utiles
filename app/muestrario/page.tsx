@@ -28,7 +28,7 @@ const productos: Producto[] = [
         nombre: 'Llavero Estudiantes',
         imagen: '/img/muestrario/estudiantes.jpg',
         precio: 1500,
-        descripcion: 'llavero de estudiantes',
+        descripcion: 'llavero de Estudiantes de La Plata',
         whatsapp: WHATSAPP_NUMBER,
     },
     {
@@ -50,7 +50,7 @@ const productos: Producto[] = [
         whatsapp: WHATSAPP_NUMBER,
     },
     {
-        id: 4,
+        id: 5,
         nombre: 'Llavero Eternauta',
         imagen: '/img/muestrario/nautico-ensenada.jpg',
         precio: 1500,
