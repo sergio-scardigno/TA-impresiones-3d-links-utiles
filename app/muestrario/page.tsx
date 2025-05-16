@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 const WHATSAPP_NUMBER = '+5491173649932';
 
@@ -87,47 +88,70 @@ Precio: $${producto.precio.toLocaleString()}
     };
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold text-center mb-8 text-white">
-                Muestrario de Productos
-            </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {productos.map((producto) => (
-                    <div
-                        key={producto.id}
-                        className="bg-white rounded-lg shadow-lg overflow-hidden"
-                    >
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-62">
-                            <Image
-                                src={producto.imagen}
-                                alt={producto.nombre}
-                                width={192}
-                                height={192}
-                                className="object-contain"
-                            />
-                        </div>
+        <>
+            <div className="container mx-auto px-4 py-8">
+                <h1 className="text-3xl font-bold text-center mb-8 text-white">
+                    Muestrario de Productos
+                </h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {productos.map((producto) => (
+                        <div
+                            key={producto.id}
+                            className="bg-white rounded-lg shadow-lg overflow-hidden"
+                        >
+                            <div className="bg-white rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-62">
+                                <Image
+                                    src={producto.imagen}
+                                    alt={producto.nombre}
+                                    width={192}
+                                    height={192}
+                                    className="object-contain"
+                                />
+                            </div>
 
-                        <div className="p-4">
-                            <h2 className="text-xl font-semibold mb-2">
-                                {producto.nombre}
-                            </h2>
-                            <p className="text-gray-600 mb-2">
-                                {producto.descripcion}
-                            </p>
-                            <p className="text-2xl font-bold text-blue-600 mb-4">
-                                ${producto.precio.toLocaleString()}
-                            </p>
-                            <button
-                                onClick={() => handleWhatsApp(producto)}
-                                className="w-full bg-green-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-green-600 transition-colors"
-                            >
-                                <WhatsAppIcon />
-                                Contactar por WhatsApp
-                            </button>
+                            <div className="p-4">
+                                <h2 className="text-xl font-semibold mb-2">
+                                    {producto.nombre}
+                                </h2>
+                                <p className="text-gray-600 mb-2">
+                                    {producto.descripcion}
+                                </p>
+                                <p className="text-2xl font-bold text-blue-600 mb-4">
+                                    ${producto.precio.toLocaleString()}
+                                </p>
+                                <button
+                                    onClick={() => handleWhatsApp(producto)}
+                                    className="w-full bg-green-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-green-600 transition-colors"
+                                >
+                                    <WhatsAppIcon />
+                                    Contactar por WhatsApp
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+            <Link
+                href="/"
+                className="fixed bottom-8 right-8 bg-white text-blue-600 px-6 py-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2 text-lg font-semibold z-50"
+                aria-label="Volver al inicio"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Volver al inicio
+            </Link>
+        </>
     );
 }
